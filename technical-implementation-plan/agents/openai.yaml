@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Implementation Plan"
+  short_description: "Design implementation-ready vertical-slice plans"
+  default_prompt: "Use $technical-implementation-plan to turn this feature into an implementation-ready technical plan."
