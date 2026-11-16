@@ -32,6 +32,7 @@ A **flow** is one user journey: a person or a system starts it, and it ends in a
 
 - List one flow per journey, including the failure and race journeys that change behaviour.
 - Pick a small cast of example people and objects. Reuse them in the flows and in the tests.
+- List existing UI copy and docs that the change makes false (for example "This can't be undone"). Each one gets new text in its flow.
 
 Done when every behaviour change from step 2 belongs to exactly one flow.
 
@@ -52,7 +53,7 @@ Done when the file exists at the agreed path and no other file changed.
 
 ## 6. Hand off for approval
 
-Reply with the path, a three-line summary, and the Open Points. Stop there. The build starts only after the owner approves the design.
+Reply with the path, a three-line summary, and the Open Points. Put the points marked **Needs an explicit yes** first, one per line, and ask about each one by name. Approving "all defaults" does not cover them. Stop there. The build starts only after the owner approves the design.
 
 ## Call stack trees
 

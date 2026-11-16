@@ -61,7 +61,7 @@ Ticket: <link>. Base: `<default branch>` (`<sha>`)<, plus open PRs this builds o
 
 ## 6. Open Points
 
-<Numbered: **the question**, then *Recommended:* the default you would take, and the alternative.>
+<Numbered: **the question**, then *Recommended:* the default you would take, and the alternative. List first, under **Needs an explicit yes**, every choice that destroys data or cannot be undone (hard delete, dropping a column, sending email to customers). A general approval of the defaults does not cover these.>
 
 ## 7. PR Stack
 
@@ -78,6 +78,8 @@ Ticket: <link>. Base: `<default branch>` (`<sha>`)<, plus open PRs this builds o
   | # | Test | Proves | Fails before the change because |
   |---|------|--------|---------------------------------|
   | 1 | <file: setup, action, expected result> | <behaviour> | <observed result on the parent> |
+
+  For a concurrency or locking test, also give the **interleaving**: who holds which lock, and who waits. "Fails before" must be a status code or a saved state, never "it waits". Implicit locks (foreign keys take a key-share lock on the parent row; cascades delete child tables in a fixed order) often already make the waiter wait, so run the setup once on the parent and paste the result, or mark it *(unverified)*.
 
 - **Manual checks:** <numbered steps the owner runs after deploy, or "None.">
 
